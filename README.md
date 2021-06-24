@@ -4,7 +4,7 @@ Scopo del progetto: Il progetto nasce in un contensto di pandemia per aiutare la
                     beni di prima necessità.
 
 # Tecnologie utilizzate:
-Sviluppo server (back-end): /n
+Sviluppo server (back-end): '/n'
 Node.js, Express.js, Handlebars Template Engine, Bcrypt, Sequelize, PostgreSQL, ElephantSQL.
 Sviluppo client: Bootstrap 4.0; JQuery; JavaScript; HTML5;
 
