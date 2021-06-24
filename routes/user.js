@@ -7,6 +7,7 @@ require('../config/passport-google');
 var Order = require('../models/order');
 var Cart = require('../models/cart');
 var User = require('../models/user');
+var Message = require('../models/message');
 var request = require('request');
 const { route } = require('.');
 const { isLoggedIn } = require('../config/isLoggedIn');
@@ -189,9 +190,18 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
                     if (orders[j].stato == "incoda") incoda += 1;
                     if (orders[j].stato == "completato") completate += 1;
                 }
-                
-               
-                res.render('user/profile_assistente',
+                Message.findAll({where: {from: req.user.dataValues.email}, order: [['createdAt', 'DESC']] }).then(result=>{
+                    
+                    var messages=[];
+                    for (var j = 0; j < result.length; j++) {
+                        messages.push({
+                            messaggio: result[j].dataValues.message,
+                            data: result[j].dataValues.createdAt,
+                            from: result[j].dataValues.from
+                        });
+                    }
+                    console.log(messages);
+                    res.render('user/profile_assistente',
                     {
                         orders: orders,
                         vuoto: orders.length == 0,
@@ -203,7 +213,11 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
                         completate: completate,
                         accettate: accettate,
                         incoda: incoda,
+                        messages: messages
                     });
+                })
+                .catch(err=> console.log(err));
+               
             });
     }
     else {
@@ -243,7 +257,17 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
                     if (orders[j].stato == "completato") completate += 1;
                     if (orders[j].stato == "cancellata") rifiutate += 1;
                 }
-                res.render('user/profile_assistito',
+                Message.findAll({where: {from: req.user.dataValues.email}, order: [['createdAt', 'DESC']] }).then(result=>{
+                    console.log(result);
+                    var messages=[];
+                    for (var j = 0; j < result.length; j++) {
+                        messages.push({
+                            messaggio: result[j].dataValues.message,
+                            data: result[j].dataValues.createdAt,
+                            from: result[j].dataValues.from
+                        });
+                    }
+                    res.render('user/profile_assistito',
                     {
                         orders: orders,
                         vuoto: orders.length == 0,
@@ -255,8 +279,12 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
                         completate: completate,
                         accettate: accettate,
                         incoda: incoda,
-                        rifiutate: rifiutate
+                        rifiutate: rifiutate,
+                        messages: messages
                     });
+                })
+                .catch(err=> console.log(err));
+                
             });
     }
 
