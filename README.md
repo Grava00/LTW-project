@@ -27,6 +27,7 @@ Scopo del progetto: Il progetto nasce in un contensto di pandemia per aiutare la
 ### Servizi REST: 
 - google maps
 - google calendar
+- SendGrid Mail
 
 ### Servizi REST commerciali
 - google (passport)
