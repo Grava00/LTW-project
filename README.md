@@ -8,10 +8,10 @@ Sviluppo server (back-end):
 Node.js, Express.js, Handlebars Template Engine, Bcrypt, Sequelize, PostgreSQL, ElephantSQL.
 Sviluppo client: Bootstrap 4.0; JQuery; JavaScript; HTML5;
 
-Api documentate: documentati con API Doc, /QuarantineHelp/Routes/docs/index.html
-Servizi REST: google maps, google calendar
-Servizi REST commerciali: google (passport), facebook (passport)
-Servizio REST eseterno con OAuth: google calendar 
+Api documentate: documentati con API Doc, /QuarantineHelp/Routes/docs/index.html,
+Servizi REST: google maps, google calendar,
+Servizi REST commerciali: google (passport), facebook (passport),
+Servizio REST eseterno con OAuth: google calendar ,
 Protocolli asincroni: Websocket per messaggisatica di assistenza con risposta statica e/o eventuale risposta via email
 
 # Istruzioni installazione:
