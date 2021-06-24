@@ -275,4 +275,23 @@
     </script>
     {{/each}}
     {{/if}}
+    <div class="messages" style="margin-bottom: 1cm; text-align:center;">
+        <h1>Messaggi di assistenza inviati:</h1>
+        {{# each messages }}
+        <div class="card" style="margin-bottom: 1cm;">
+            <div class="card-header">
+                Richiesta Assistenza data: {{this.data}}
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p><i>{{this.messaggio}}</i></p>
+                <footer class="blockquote-footer">{{this.from}}</footer>
+                </blockquote>
+            </div>
+        </div>
+        {{/each}}
+
+        
+       
+    </div>
 </div>
