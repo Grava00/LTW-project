@@ -1,7 +1,7 @@
 # QuarantineHelp
 
-Scopo del progetto: Il progetto nasce in un contensto di pandemia per aiutare la gente bisognosa a mettersi in contatto con volontari al fine di richiedere 
-                    beni di prima necessità.
+### Scopo del progetto: 
+Il progetto nasce in un contensto di pandemia per aiutare la gente bisognosa, chiusa in casa per quarantena domiciliare, al fine di mettersi in contatto con soggetti volontari ai quali richiedere beni di prima necessità. 
 
 # Tecnologie utilizzate:
 ## Sviluppo server (back-end):
